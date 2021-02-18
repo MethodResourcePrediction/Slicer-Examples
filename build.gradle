@@ -1,0 +1,29 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+
+    // Apply the application plugin to add support for building a CLI application.
+    id 'application'
+}
+
+repositories {
+    // Use jcenter for resolving dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+    maven {
+        url = 'https://srv202.parsens.uni-kassel.de/repository/maven-snapshots/'
+    }
+}
+
+dependencies {
+    compile group: 'de.uniks.vs.methodresourceprediction', name: 'slicer', version: '1.0.0-SNAPSHOT'
+//    compile group: 'de.uniks.vs.methodresourceprediction', name: 'slicer.export', version: '1.0.0-SNAPSHOT'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+
+application {
+    // Define the main class for the application.
+    mainClassName = 'de.uniks.methodresourceprediction.slicer.examples.App'
+}
