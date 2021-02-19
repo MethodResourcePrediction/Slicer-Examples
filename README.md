@@ -131,7 +131,7 @@ See [ExecutableSliceExample.java](https://github.com/MethodResourcePrediction/Sl
 
 # Notes
 
-The project uses a changed version of WALA-Shrike which supports processing double-sized stack elements (which is currently supported, [see WALA #753 here](https://github.com/wala/WALA/issues/753)). It is available as a snapshot on an own Sonatype Nexus instance [hosted at the University of Kassel](https://srv202.parsens.uni-kassel.de/). If you do not need the support for double-sized stack processing, the unmodified WALA-Shirke can be used. You just have to rebuild the depending projects (slicer, slicer-export, utils, ...) for your own.
+The project uses a changed version of WALA-Shrike which supports processing double-sized stack elements (which is currently supported, [see WALA #753 here](https://github.com/wala/WALA/issues/753)). It is available as a snapshot on an own Sonatype Nexus instance [hosted at the University of Kassel](https://srv202.parsens.uni-kassel.de/). If you do not need the support for double-sized stack processing, the unmodified WALA-Shrike can be used. You just have to rebuild the depending projects (slicer, slicer-export, utils, ...) for your own.
 
 Building on top of original WALA-Shrike currently means no support for primitive datatypes `double` and `long`! Please keep that in mind if your experience stack over-/underflow errors.
 
