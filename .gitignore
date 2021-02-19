@@ -5,7 +5,7 @@
 build/
 
 *.log
-./*.jar
+/*.jar
 *.class
 
 # Ignore Gradle build output directory
