@@ -30,7 +30,7 @@ Slice arbitary java bytecodes given one or multiple indexes which should be kept
 
 ### Gradle integration
 
-Add the following to your `build.gradle`:
+Add the following to your `build.gradle`. See [Notes](#notes) for the reason why there is another repo needed.
 
     repositories {
         ...
@@ -131,7 +131,7 @@ See [ExecutableSliceExample.java](https://github.com/MethodResourcePrediction/Sl
 
 # Notes
 
-The project uses a changed version of WALA-Shrike which supports processing double-sized stack elements ([see WALA #753](https://github.com/wala/WALA/issues/753) and [WALA-PR #775](https://github.com/wala/WALA/pull/775)). It is available as a snapshot on an own Sonatype Nexus instance [hosted at the University of Kassel](https://srv202.parsens.uni-kassel.de/). If you do not need the support for double-sized stack processing, the unmodified WALA-Shrike can be used. You just have to rebuild the depending projects (slicer, slicer-export, utils, ...) for your own.
+The project uses a changed version of WALA-Shrike which supports processing double-sized stack elements ([see WALA #753](https://github.com/wala/WALA/issues/753) and [WALA-PR #775](https://github.com/wala/WALA/pull/775)). It is available as a snapshot on an own Sonatype Nexus instance [hosted at the University of Kassel](https://srv202.parsens.uni-kassel.de/). If you do not need the support for double-sized stack processing, the unmodified WALA-Shrike can be used. You just have to rebuild the depending projects (slicer, slicer-export, utils, ...).
 
 Building on top of original WALA-Shrike currently means no support for primitive datatypes `double` and `long`! Please keep that in mind if your experience stack over-/underflow errors.
 
