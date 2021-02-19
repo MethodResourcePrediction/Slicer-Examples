@@ -17,7 +17,6 @@ repositories {
 
 dependencies {
     compile group: 'de.uniks.vs.methodresourceprediction', name: 'slicer', version: '1.0.0-SNAPSHOT'
-//    compile group: 'de.uniks.vs.methodresourceprediction', name: 'slicer.export', version: '1.0.0-SNAPSHOT'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
