@@ -8,7 +8,7 @@ Slice arbitary java bytecodes given one or multiple indexes which should be kept
 
 * Generates executable java slices
 * Plotting graphs using dot (see below)
-* Graph generation upon method
+* Graph generation using [JGraphT](https://github.com/jgrapht/jgrapht)
 	- Control Flow
 	- Control Dependency
 	- Block Dependency
@@ -48,7 +48,7 @@ Add the following to your `build.gradle`:
 
 ## Select a method
 
-To slice a method, the packaged jar has to be accessable. Let's slice the method `ClientSidePreparedStatement.getMetaData()` from mariadb java connector (Version 2.7.2 at the time of writing). The interested slice criterion is line 4 here (the first if-statement).
+To slice a method, the packaged jar has to be accessable. Let's slice the method `ClientSidePreparedStatement.getMetaData()` from [mariadb java connector](https://downloads.mariadb.org/connector-java/) (Version 2.7.2 at the time of writing). The interested slice criterion is for example line 4 here (the first if-statement).
 
 Decompiled `ClientSidePreparedStatement.getMetaData()` source:
 
@@ -71,7 +71,7 @@ Decompiled `ClientSidePreparedStatement.getMetaData()` source:
 
 The resulting control flow graph is show below. More graphs can be found in [GraphExample.java](https://github.com/MethodResourcePrediction/Slicer-Examples/tree/master/src/main/java/de/uniks/methodresourceprediction/slicer/examples/GraphExample.java)
 
-<img src="doc/ClientSidePreparedStatement-getMetaData-cfg.png" alt="ClientSidePreparedStatement.getMetaData() - Control Flow Graph" width="600"/>
+<img src="doc/ClientSidePreparedStatement-getMetaData-cfg.png" alt="ClientSidePreparedStatement.getMetaData() - Control Flow Graph" width="700"/>
 
 ## Create a slice
 
@@ -127,11 +127,13 @@ Wait, what about the slice instruction at index 9? Where does it come from?
 
 ## Create an executable slice
 
+See [ExecutableSliceExample.java](https://github.com/MethodResourcePrediction/Slicer-Examples/tree/master/src/main/java/de/uniks/methodresourceprediction/slicer/examples/ExecutableSliceExample.java)
 
+# Notes
 
+The project uses a changed version of WALA-Shrike which supports processing double-sized stack elements (which is currently supported, [see WALA #753 here](https://github.com/wala/WALA/issues/753)). It is available as a snapshot on an own Sonatype Nexus instance [hosted at the University of Kassel](https://srv202.parsens.uni-kassel.de/). If you do not need the support for double-sized stack processing, the unmodified WALA-Shirke can be used. You just have to rebuild the depending projects (slicer, slicer-export, utils, ...) for your own.
 
-
-
+Building on top of original WALA-Shrike currently means no support for primitive datatypes `double` and `long`! Please keep that in mind if your experience stack over-/underflow errors.
 
 
 
