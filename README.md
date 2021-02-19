@@ -121,7 +121,7 @@ The output is:
 * Instructions between index 11 and 16 are sliced out (no dependency)
 * The return statement at the end of the method (index 19) results in keeping instruction 10 to 12
 
-Wait, what about the slice instruction at index 9? Where does it come from?
+**Wait, what about the slice instruction at index 9? Where does it come from?**
 
 => This instruction is added to deal as the jump target for the if-condition at index 5. The condition target (index 11) is not updated right here but during creation of the executable slice which is 9 afterwards.
 
