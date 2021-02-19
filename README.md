@@ -48,7 +48,7 @@ Add the following to your `build.gradle`. See [Notes](#notes) for the reason why
 
 ## Select a method
 
-To slice a method, the packaged jar has to be accessable. Let's slice the method `ClientSidePreparedStatement.getMetaData()` from [mariadb java connector](https://downloads.mariadb.org/connector-java/) (Version 2.7.2 at the time of writing). The interested slice criterion is for example line 4 here (the first if-statement).
+To slice a method, the packaged jar has to be accessible. Let's slice the method `ClientSidePreparedStatement.getMetaData()` from [mariadb java connector](https://downloads.mariadb.org/connector-java/) (Version 2.7.2 at the time of writing). The interested slice criterion is for example line 4 here (the first if-statement).
 
 Decompiled `ClientSidePreparedStatement.getMetaData()` source:
 
