@@ -113,6 +113,10 @@ The output is:
 	 11: Get(Ljava/sql/ResultSetMetaData;,NONSTATIC,Lorg/mariadb/jdbc/ClientSidePreparedStatement;,resultSetMetaData)
 	 12: Return(Ljava/lang/Object;)
 
+The control flow graph is now as follows:
+
+<img src="doc/ClientSidePreparedStatement-getMetaData-cfg-sliced.png" alt="ClientSidePreparedStatement.getMetaData() - Control Flow Graph - Sliced" width="700"/>
+
 ## Understand the generated slice
 
 * Bytecode instructions 0 and 1 were sliced out since there is no dependency to instruction 7 and the method return value
