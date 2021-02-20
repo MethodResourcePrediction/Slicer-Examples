@@ -113,7 +113,16 @@ The output is:
 	 11: Get(Ljava/sql/ResultSetMetaData;,NONSTATIC,Lorg/mariadb/jdbc/ClientSidePreparedStatement;,resultSetMetaData)
 	 12: Return(Ljava/lang/Object;)
 
-The control flow graph is now as follows:
+Finally, the decompiled bytecode is:
+
+```java
+public ResultSetMetaData getMetaData() throws SQLException {
+	ResultSet rs = this.getResultSet();
+	return rs != null ? rs.getMetaData() : this.resultSetMetaData;
+}
+```
+
+The control flow graph is as follows:
 
 <img src="doc/ClientSidePreparedStatement-getMetaData-cfg-sliced.png" alt="ClientSidePreparedStatement.getMetaData() - Control Flow Graph - Sliced" width="700"/>
 
