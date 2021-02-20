@@ -4,6 +4,9 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application.
     id 'application'
+
+    // Google java format
+    id 'com.github.sherter.google-java-format' version '0.9'
 }
 
 repositories {
@@ -24,5 +27,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = 'de.uniks.methodresourceprediction.slicer.examples.App'
+    mainClassName = 'de.uniks.methodresourceprediction.slicer.examples.GraphExample'
 }

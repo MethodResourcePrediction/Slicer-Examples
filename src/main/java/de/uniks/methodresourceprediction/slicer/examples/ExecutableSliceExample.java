@@ -2,11 +2,10 @@ package de.uniks.methodresourceprediction.slicer.examples;
 
 import com.ibm.wala.shrikeCT.InvalidClassFileException;
 import de.uniks.vs.methodresourceprediction.slicer.Slicer;
-import org.apache.commons.codec.DecoderException;
-import org.jgrapht.io.ExportException;
-
 import java.io.IOException;
 import java.util.Set;
+import org.apache.commons.codec.DecoderException;
+import org.jgrapht.io.ExportException;
 
 public class ExecutableSliceExample extends ExampleHelper {
   public static void main(String[] args)
