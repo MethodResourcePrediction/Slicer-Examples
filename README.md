@@ -69,7 +69,7 @@ Decompiled `ClientSidePreparedStatement.getMetaData()` source:
 
 ## Construct the control flow graph
 
-The resulting control flow graph is show below. More graphs can be found in [GraphExample.java](https://github.com/MethodResourcePrediction/Slicer-Examples/tree/master/src/main/java/de/uniks/methodresourceprediction/slicer/examples/GraphExample.java)
+The resulting control flow graph is shown below. More graphs can be found in [GraphExample.java](https://github.com/MethodResourcePrediction/Slicer-Examples/tree/master/src/main/java/de/uniks/methodresourceprediction/slicer/examples/GraphExample.java)
 
 <img src="doc/ClientSidePreparedStatement-getMetaData-cfg.png" alt="ClientSidePreparedStatement.getMetaData() - Control Flow Graph" width="700"/>
 
@@ -112,6 +112,19 @@ The output is:
 	 10: LocalLoad(Ljava/lang/Object;,0)
 	 11: Get(Ljava/sql/ResultSetMetaData;,NONSTATIC,Lorg/mariadb/jdbc/ClientSidePreparedStatement;,resultSetMetaData)
 	 12: Return(Ljava/lang/Object;)
+
+Finally, the decompiled bytecode is:
+
+```java
+public ResultSetMetaData getMetaData() throws SQLException {
+	ResultSet rs = this.getResultSet();
+	return rs != null ? rs.getMetaData() : this.resultSetMetaData;
+}
+```
+
+The control flow graph is as follows:
+
+<img src="doc/ClientSidePreparedStatement-getMetaData-cfg-sliced.png" alt="ClientSidePreparedStatement.getMetaData() - Control Flow Graph - Sliced" width="700"/>
 
 ## Understand the generated slice
 
