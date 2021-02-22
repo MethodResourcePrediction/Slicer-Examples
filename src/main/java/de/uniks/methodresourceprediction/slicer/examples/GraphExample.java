@@ -3,9 +3,8 @@ package de.uniks.methodresourceprediction.slicer.examples;
 import com.ibm.wala.shrikeCT.InvalidClassFileException;
 import de.uniks.vs.methodresourceprediction.slicer.ControlFlow;
 import de.uniks.vs.methodresourceprediction.slicer.Slicer;
-import org.jgrapht.io.ExportException;
-
 import java.io.IOException;
+import org.jgrapht.io.ExportException;
 
 public class GraphExample extends ExampleHelper {
   public static void main(String[] args)
