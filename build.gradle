@@ -12,14 +12,14 @@ plugins {
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+    mavenCentral()
     maven {
         url = 'https://srv202.parsens.uni-kassel.de/repository/maven-snapshots/'
     }
 }
 
 dependencies {
-    compile group: 'de.uniks.vs.methodresourceprediction', name: 'slicer', version: '1.0.0-SNAPSHOT'
+    implementation group: 'de.uniks.vs.methodresourceprediction', name: 'slicer', version: '1.0.0-SNAPSHOT'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
