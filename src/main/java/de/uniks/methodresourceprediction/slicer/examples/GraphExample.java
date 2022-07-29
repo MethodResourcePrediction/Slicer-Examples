@@ -1,6 +1,6 @@
 package de.uniks.methodresourceprediction.slicer.examples;
 
-import com.ibm.wala.shrikeCT.InvalidClassFileException;
+import com.ibm.wala.shrike.shrikeCT.InvalidClassFileException;
 import de.uniks.vs.methodresourceprediction.slicer.ControlFlow;
 import de.uniks.vs.methodresourceprediction.slicer.Slicer;
 import java.io.IOException;
@@ -11,7 +11,8 @@ public class GraphExample extends ExampleHelper {
       throws IOException, InterruptedException, ExportException, InvalidClassFileException {
     // Define the signature of method
     String signature =
-        "org.mariadb.jdbc.ClientSidePreparedStatement.getMetaData()Ljava/sql/ResultSetMetaData;";
+//        "org.mariadb.jdbc.ClientSidePreparedStatement.getMetaData()Ljava/sql/ResultSetMetaData;";
+    "java.util.LinkedList.removeLast()Ljava/lang/Object;";
 
     // Create a Slicer object with jar file and signature
     Slicer slicer = new Slicer();
